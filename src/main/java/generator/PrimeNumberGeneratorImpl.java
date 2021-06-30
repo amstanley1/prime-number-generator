@@ -9,8 +9,15 @@ public class PrimeNumberGeneratorImpl implements PrimeNumberGenerator {
     }
 
     public List<Integer> generate(int startingValue, int endingValue) {
+        int start = startingValue;
+        int end = endingValue;
+        if (start > end) {
+            int tempValue = start;
+            start = end;
+            end = tempValue;
+        }
         List<Integer> primeNumbers = new ArrayList<>();
-        for (int i = startingValue; i <= endingValue; i++) {
+        for (int i = start; i <= end; i++) {
             if (isPrime(i)) {
                 primeNumbers.add(i);
             }
