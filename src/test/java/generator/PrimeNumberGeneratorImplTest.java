@@ -13,19 +13,19 @@ public class PrimeNumberGeneratorImplTest {
         PrimeNumberGenerator primeNumberGenerator = new PrimeNumberGeneratorImpl();
 
         List<Integer> primeNumbers = primeNumberGenerator.generate(7900, 7920);
-        Assert.assertEquals(primeNumbers, new ArrayList<>(List.of(7901, 7907, 7919)));
+        Assert.assertEquals(new ArrayList<>(List.of(7901, 7907, 7919)), primeNumbers);
+    }
+
+    @Test
+    public void shouldBeAbleToGenerateListOfPrimeNumbersBetween1And10() {
+        PrimeNumberGenerator primeNumberGenerator = new PrimeNumberGeneratorImpl();
+
+        List<Integer> primeNumbers = primeNumberGenerator.generate(1, 10);
+        Assert.assertEquals(new ArrayList<>(List.of(2, 3, 5, 7)), primeNumbers);
     }
 
 //    @Test
-//    public void shouldBeAbleToGenerateListOfPrimeNumbersBetween1And10() {
-//        PrimeNumberGenerator primeNumberGenerator = new PrimeNumberGeneratorImpl();
-//
-//        List<Integer> primeNumbers = primeNumberGenerator.generate(1, 10);
-//        Assert.assertEquals(primeNumbers, new ArrayList<>(List.of(7901, 7907, 7919)));
-//    }
-
-//    @Test
-//    public void shouldBeAbleToGenerateListOfPrimeNumbersBetween7900And7920() {
+//    public void shouldBeAbleToGenerateListOfPrimeNumbersBetween7920And7900() {
 //        PrimeNumberGenerator primeNumberGenerator = new PrimeNumberGeneratorImpl();
 //
 //        List<Integer> primeNumbers = primeNumberGenerator.generate(7900, 7920);
