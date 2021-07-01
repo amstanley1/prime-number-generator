@@ -1,4 +1,4 @@
-package generator;
+package generator.primenumber;
 
 import java.util.List;
 

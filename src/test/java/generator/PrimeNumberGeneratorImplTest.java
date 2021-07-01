@@ -1,5 +1,7 @@
 package generator;
 
+import generator.primenumber.PrimeNumberGenerator;
+import generator.primenumber.PrimeNumberGeneratorImpl;
 import org.junit.Assert;
 import org.junit.Test;
 
