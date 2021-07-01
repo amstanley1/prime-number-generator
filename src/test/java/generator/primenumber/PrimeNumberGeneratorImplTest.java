@@ -1,4 +1,4 @@
-package generator;
+package generator.primenumber;
 
 import generator.primenumber.PrimeNumberGenerator;
 import generator.primenumber.PrimeNumberGeneratorImpl;
