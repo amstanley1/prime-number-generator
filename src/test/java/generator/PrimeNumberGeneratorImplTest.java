@@ -48,4 +48,13 @@ public class PrimeNumberGeneratorImplTest {
         List<Integer> switchedRangeResult = primeNumberGenerator.generate(20, 50);
         Assert.assertEquals(primeNumbersResult, switchedRangeResult);
     }
+
+    @Test
+    public void shouldBeAbleToGenerateNoPrimeNumbersForRangeWithNegativeStartingValue() {
+        PrimeNumberGenerator primeNumberGenerator = new PrimeNumberGeneratorImpl();
+
+        List<Integer> primeNumbersResult = primeNumberGenerator.generate(-5, 20);
+        List<Integer> switchedRangeResult = primeNumberGenerator.generate(2, 20);
+        Assert.assertEquals(primeNumbersResult, switchedRangeResult);
+    }
 }

@@ -4,9 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PrimeNumberGeneratorImpl implements PrimeNumberGenerator {
-    public PrimeNumberGeneratorImpl() {
-
-    }
 
     public List<Integer> generate(int startingValue, int endingValue) {
         int start = startingValue;
