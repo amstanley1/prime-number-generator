@@ -40,7 +40,7 @@ public class GeneratorApp {
                     System.out.print(primeNumbers.get(i));
                     if (i != primeNumbers.size() - 1) {
                         System.out.print(", ");
-                        if (i % 25 == 0) {
+                        if (i > 0 && i % 25 == 0) {
                             System.out.println();
                         }
                     }
