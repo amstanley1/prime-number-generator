@@ -8,6 +8,7 @@ public class PrimeNumberGeneratorImpl implements PrimeNumberGenerator {
     public List<Integer> generate(int startingValue, int endingValue) {
         int max = Math.max(startingValue, endingValue);
         max = Math.max(0, max);
+
         int min = Math.min(startingValue, endingValue);
         min = Math.max(0, min);
 

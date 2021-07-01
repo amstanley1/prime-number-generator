@@ -16,24 +16,43 @@ public class GeneratorApp {
         int startInt = 0;
         int lastInt = 0;
         System.out.println("This app will generate a list of prime numbers for a given range.");
-        try {
-            System.out.println("Enter the first number of the range: ");
-            startInt = reader.nextInt();
-            System.out.println("Enter the second number of the range: ");
-            lastInt = reader.nextInt();
-        } catch (InputMismatchException e) {
-            System.out.print("Invalid input entered.");
-        }
-        System.out.println();
+        while (true) {
+            try {
+                System.out.println("Enter the first number of the range: ");
+                startInt = reader.nextInt();
+                reader.nextLine();
+                System.out.println("Enter the second number of the range: ");
+                lastInt = reader.nextInt();
+                reader.nextLine();
+            } catch (InputMismatchException e) {
+                System.out.println("Invalid input.");
+                reader.nextLine();
+            }
+            System.out.println();
 
-        List<Integer> primeNumbers = primeNumberGenerator.generate(startInt, lastInt);
+            List<Integer> primeNumbers = primeNumberGenerator.generate(startInt, lastInt);
 
-        if (primeNumbers.size() == 0) {
-            System.out.println("No prime numbers found.");
-        } else {
-            System.out.println("Prime numbers:");
-            for(int i = 0; i < primeNumbers.size(); i++) {
-                System.out.println(primeNumbers.get(i));
+            if (primeNumbers.size() == 0) {
+                System.out.println("No prime numbers found for the entered range.");
+            } else {
+                System.out.println("Prime numbers:");
+                for(int i = 0; i < primeNumbers.size(); i++) {
+                    System.out.print(primeNumbers.get(i));
+                    if (i != primeNumbers.size() - 1) {
+                        System.out.print(", ");
+                        if (i % 25 == 0) {
+                            System.out.println();
+                        }
+                    }
+                }
+            }
+            System.out.println();
+            System.out.println("Would you like to enter another range? Y/N");
+            String userSelection = reader.nextLine();
+            if (userSelection.equalsIgnoreCase("y") || userSelection.equalsIgnoreCase("yes")) {
+                continue;
+            } else {
+                break;
             }
         }
         reader.close();
