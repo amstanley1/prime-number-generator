@@ -33,7 +33,7 @@ public class GeneratorApp {
             List<Integer> primeNumbers = primeNumberGenerator.generate(startInt, lastInt);
 
             if (primeNumbers.size() == 0) {
-                System.out.println("No prime numbers found for the entered range.");
+                System.out.print("No prime numbers found for the entered range.");
             } else {
                 System.out.println("Prime numbers:");
                 for(int i = 0; i < primeNumbers.size(); i++) {
@@ -46,6 +46,7 @@ public class GeneratorApp {
                     }
                 }
             }
+            System.out.println();
             System.out.println();
             System.out.println("Would you like to enter another range? Y/N");
             String userSelection = reader.nextLine();
