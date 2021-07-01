@@ -1,22 +1,18 @@
 package generator.primenumber;
 
-import generator.primenumber.PrimeNumberGenerator;
-
 import java.util.ArrayList;
 import java.util.List;
 
 public class PrimeNumberGeneratorImpl implements PrimeNumberGenerator {
 
     public List<Integer> generate(int startingValue, int endingValue) {
-        int start = startingValue;
-        int end = endingValue;
-        if (start > end) {
-            int tempValue = start;
-            start = end;
-            end = tempValue;
-        }
+        int max = Math.max(startingValue, endingValue);
+        max = Math.max(0, max);
+        int min = Math.min(startingValue, endingValue);
+        min = Math.max(0, min);
+
         List<Integer> primeNumbers = new ArrayList<>();
-        for (int i = start; i <= end; i++) {
+        for (int i = min; i <= max; i++) {
             if (isPrime(i)) {
                 primeNumbers.add(i);
             }
