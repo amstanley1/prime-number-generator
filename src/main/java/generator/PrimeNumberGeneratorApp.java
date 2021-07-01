@@ -14,11 +14,17 @@ public class PrimeNumberGeneratorApp {
         int startInt = reader.nextInt();
         System.out.println("Enter the second number of the range: ");
         int lastInt = reader.nextInt();
+        System.out.println();
 
         List<Integer> primeNumbers = primeNumberGenerator.generate(startInt, lastInt);
 
-        for(int i = 0; i < primeNumbers.size(); i++) {
-            System.out.println(primeNumbers.get(i));
+        if (primeNumbers.size() == 0) {
+            System.out.println("No prime numbers in this range");
+        } else {
+            System.out.println("Prime numbers:");
+            for(int i = 0; i < primeNumbers.size(); i++) {
+                System.out.println(primeNumbers.get(i));
+            }
         }
 
         reader.close();

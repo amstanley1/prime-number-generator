@@ -41,7 +41,7 @@ public class PrimeNumberGeneratorImplTest {
     }
 
     @Test
-    public void shouldBeAbleToGenerateSamePrimeNumbersFrom20To50AndFrom50To20() {
+    public void shouldBeAbleToGenerateSamePrimeNumbersFor20To50And50To20() {
         PrimeNumberGenerator primeNumberGenerator = new PrimeNumberGeneratorImpl();
 
         List<Integer> primeNumbersResult = primeNumberGenerator.generate(50, 20);
@@ -50,11 +50,10 @@ public class PrimeNumberGeneratorImplTest {
     }
 
     @Test
-    public void shouldBeAbleToGenerateNoPrimeNumbersForRangeWithNegativeStartingValue() {
+    public void shouldBeAbleToGeneratePrimeNumbersForRangeWithNegativeStartingValue() {
         PrimeNumberGenerator primeNumberGenerator = new PrimeNumberGeneratorImpl();
 
         List<Integer> primeNumbersResult = primeNumberGenerator.generate(-5, 20);
-        List<Integer> switchedRangeResult = primeNumberGenerator.generate(2, 20);
-        Assert.assertEquals(primeNumbersResult, switchedRangeResult);
+        Assert.assertEquals(new ArrayList<>(List.of(2, 3, 5, 7, 11, 13, 17, 19)), primeNumbersResult);
     }
 }

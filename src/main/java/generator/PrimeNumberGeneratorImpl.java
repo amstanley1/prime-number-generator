@@ -26,7 +26,6 @@ public class PrimeNumberGeneratorImpl implements PrimeNumberGenerator {
         if (value <= 1) {
             return false;
         }
-
         for (int i = 2; i <= Math.sqrt(value); i++) {
             if (value % i == 0) {
                 return false;
